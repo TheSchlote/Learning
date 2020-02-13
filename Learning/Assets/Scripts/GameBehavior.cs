@@ -10,6 +10,8 @@ public class GameBehavior : MonoBehaviour
     public bool showWinScreen = false;
     public bool showLossScreen = false;
     private int _itemsCollected = 0;
+    private int _playerHP = 3;
+
     public int Items
     {
         get { return _itemsCollected; }
@@ -30,7 +32,6 @@ public class GameBehavior : MonoBehaviour
         }
     }
 
-    private int _playerHP = 3;
     public int HP 
     { 
         get { return _playerHP; }
@@ -47,10 +48,9 @@ public class GameBehavior : MonoBehaviour
             {
                 labelText = "Ouch... that's gotta hurt.";
             }
-            //Debug.LogFormat("Lives: {0}", _playerHP);
         }
     }
-
+  
     private void OnGUI()
     {
         GUI.Box(new Rect(20, 20, 150, 25), "Player Health: " + _playerHP);
@@ -59,7 +59,7 @@ public class GameBehavior : MonoBehaviour
 
         if (showWinScreen)
         {
-            if(GUI.Button(new Rect(Screen.width/2-100, Screen.height/2-50,200,100), "YOU WON!"))
+            if(GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 50, 200, 100), "YOU WON!"))
             {
                 RestartLevel();
             }

@@ -33,12 +33,6 @@ public class PlayerBehavior : MonoBehaviour
         {
             _rb.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
         }
-
-        /*
-        this.transform.Translate(Vector3.forward * vInput * Time.deltaTime);
-
-        this.transform.Rotate(Vector3.up * hInput * Time.deltaTime);
-        */
     }
 
     void FixedUpdate()
